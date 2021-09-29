@@ -1,0 +1,12 @@
+.index{
+   border: 0.8px solid black;
+   background-color: #fff;
+   font-weight: bold;
+   color: #000000;
+   font-family: 'Lato',sans-serif;
+}
+.value{
+    border: 1px solid black;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: bolder;
+}
