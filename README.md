@@ -1,4 +1,4 @@
-# Oneshot AI's Task fronted
+# Oneshot AI's Task - front-end
 
 ## MERN Stack
 ## Ant Design - UI
@@ -8,7 +8,7 @@
 <a href ="https://oneshot-ai.netlify.app/" > Deployed App</a>
 
 
-# Oneshot AI's Task Backend
+# Oneshot AI's Task - Back-end
 
 ### Deployed On HEROKU
 
