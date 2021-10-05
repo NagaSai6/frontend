@@ -3,8 +3,8 @@
 ## MERN Stack
 ## Ant Design - UI
 
-<p> FRONTED DEPLOYED ON NETLIFY </p>
-
+### Deployed on Netlify
+<br />
 <a href ="https://oneshot-ai.netlify.app/" > Deployed App</a>
 
 
