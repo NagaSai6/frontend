@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy":"https://oneshot-ai-server.herokuapp.com/oneshot-ai",
+  "proxy": "https://oneshot-ai-server.herokuapp.com/oneshot-ai",
   "dependencies": {
     "@ant-design/charts": "^1.2.13",
     "@ant-design/icons": "^4.7.0",

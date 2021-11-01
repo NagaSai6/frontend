@@ -9,11 +9,18 @@ const { Panel } = Collapse;
 
 const Students = (props) => {
   const [studentsData, setStudentsData] = useState(null);
-
+  var config = {
+    defaultCurrent: 1,
+    pageSize: 5,
+    position: "both",
+    total: 100,
+    showQuickJumper: true,
+  };
 
   useEffect(() => {
     const url =
-      "https://oneshot-ai-server.herokuapp.com/oneshot-ai/fetch-students-data/" + props.students;
+      "https://oneshot-ai-server.herokuapp.com/oneshot-ai/fetch-students-data/" +
+      props.students;
     axios.get(url).then((res) => {
       setStudentsData(res.data);
     });
@@ -23,41 +30,75 @@ const Students = (props) => {
     return <Spin />;
   }
 
-    // console.log(studentsData)
-
   return (
-    // <List
-    //   dataSource={studentsData}
-    //   renderItem={(item) => {
-    //     <List.Item key={item._id}>
-    //       <Collapse style={{ minWidth: "257px" }}>
-    //         <Panel header={item.name}>
-    //           <Row gutter={[16, { xs: 8, sm: 16, md: 24, lg: 32 }]}>
-    //             <Col className="gutter-row index" span={8}>
-    //               <div>Year Of Batch</div>
-    //             </Col>
-    //             <Col className="gutter-row value" span={16}>
-    //               <div>{item.yearOfBatch}</div>
-    //             </Col>
-    //           </Row>
-    //           <Row gutter={[16, { xs: 8, sm: 16, md: 24, lg: 32 }]}>
-    //             <Col className="gutter-row index" span={8}>
-    //               <div>Skills</div>
-    //             </Col>
-    //             <Col className="gutter-row value" span={16}>
-    //               <div>
-    //                 {item.skills.map((e) => {
-    //                   return e + " , ";
-    //                 })}
-    //               </div>
-    //             </Col>
-    //           </Row>
-    //         </Panel>
-    //       </Collapse>
-    //     </List.Item>;
-    //   }}
-    // />
-        <List>
+    <List
+      itemLayout="vertical"
+      pagination={config}
+      dataSource={studentsData}
+      renderItem={(item) => {
+        return (
+          <List.Item key={item._id}>
+            <Collapse style={{ minWidth: "100%" }}>
+              <Panel header={item.name}>
+                <Row gutter={[16, { xs: 8, sm: 16, md: 24, lg: 32 }]}>
+                  <Col className="gutter-row index" span={8}>
+                    <div>Year Of Batch</div>
+                  </Col>
+                  <Col className="gutter-row value" span={16}>
+                    <div>{item.yearOfBatch}</div>
+                  </Col>
+                </Row>
+                <Row gutter={[16, { xs: 8, sm: 16, md: 24, lg: 32 }]}>
+                  <Col className="gutter-row index" span={8}>
+                    <div>Skills</div>
+                  </Col>
+                  <Col className="gutter-row value" span={16}>
+                    <div>
+                      {item.skills.map((e) => {
+                        return e + " , ";
+                      })}
+                    </div>
+                  </Col>
+                </Row>
+              </Panel>
+            </Collapse>
+          </List.Item>
+        );
+      }}
+    />
+  );
+};
+
+// const Students = (props) => {
+//   let id = props.students;
+//   const [studentsData, setStudentsData] = useState(null);
+//   const url = "http://localhost:2021/oneshot-ai/fetch-students-data/" + id;
+//   console.log(url);
+
+//   useEffect(() => {
+//     axios.get(url).then((res) => {
+//       setStudentsData(res.data);
+//     });
+//   }, [url]);
+
+//   if (!studentsData) {
+//     return <Spin />;
+//   }
+
+//   var config = {
+//     pagination: {
+//       pageSizeOptions: ["30", "40"],
+//       showSizeChanger: true,
+//     },
+//   };
+
+//   );
+// };
+
+export default Students;
+
+{
+  /* <List>
           {studentsData.map((student) => {
             return (
               <List.Item key={student._id}>
@@ -88,45 +129,5 @@ const Students = (props) => {
               </List.Item>
             );
           })}
-        </List>
-
-
-
-
-
-
-
-
-
-
-  );
-};
-
-// const Students = (props) => {
-//   let id = props.students;
-//   const [studentsData, setStudentsData] = useState(null);
-//   const url = "http://localhost:2021/oneshot-ai/fetch-students-data/" + id;
-//   console.log(url);
-
-//   useEffect(() => {
-//     axios.get(url).then((res) => {
-//       setStudentsData(res.data);
-//     });
-//   }, [url]);
-
-//   if (!studentsData) {
-//     return <Spin />;
-//   }
-
-//   var config = {
-//     pagination: {
-//       pageSizeOptions: ["30", "40"],
-//       showSizeChanger: true,
-//     },
-//   };
-
-
-//   );
-// };
-
-export default Students;
+        </List> */
+}
