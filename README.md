@@ -5,7 +5,7 @@
 
 ### Deployed on Netlify
 <br />
-<a href ="https://oneshot-ai.netlify.app/" > Deployed App</a>
+<a href ="https://loving-volhard-16876f.netlify.app/" > Deployed App</a>
 
 
 # Oneshot AI's Task - Back-end
